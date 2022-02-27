@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DetailPageView: View{
     
-    @State var detail: CardModel
-    
+    @State var carcModel: CardModel
+    // DetailPageViewの表示有無をHomeViewと共有
     @Binding var show: Bool
     
     var body: some View{
@@ -24,7 +24,7 @@ struct DetailPageView: View{
                         .font(.system(size: 24, weight: .bold))
                 }// Button
                 
-                Text(self.detail.title)
+                Text(self.carcModel.title)
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -34,20 +34,18 @@ struct DetailPageView: View{
             .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 8)
             .padding([.horizontal, .bottom])
             .background(Color("Color"))
-            
-            Image(self.detail.image)
+            // data配列の画像を表示
+            Image(self.carcModel.image)
                 .resizable()
                 .frame(height: 320)
-            
             VStack(alignment: .leading, spacing: 15){
-                
-                Text(self.detail.title)
+                Text(self.carcModel.title)
                     .fontWeight(.bold)
                     .font(.title)
-                
-                Text(self.detail.details)
+
+                Text(self.carcModel.details)
             }// VStack
-            .foregroundColor(.black)
+            .foregroundColor(.white)
             .padding()
             Spacer(minLength: 0)
         }// VStack

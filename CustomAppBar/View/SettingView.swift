@@ -24,7 +24,6 @@ struct SettingView: View {
                                 showSetting.toggle()
                             }
                         }label: {
-                            
                             Text("Day\(index) of SwiftUI")
                         }
                         .foregroundColor(.primary)
